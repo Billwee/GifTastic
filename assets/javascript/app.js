@@ -56,6 +56,8 @@ $(document).on('click', '.movBTN', function(e) {
   var queryURL2 =
     'https://www.omdbapi.com/?t=' + $(this).text() + '&apikey=trilogy';
 
+  // Using $.when to access two APIs for the same click
+  // function.
   $.when($.get(queryURL), $.get(queryURL2)).then(function(
     response1,
     response2
@@ -66,6 +68,11 @@ $(document).on('click', '.movBTN', function(e) {
     $('.tenMoreDiv').css('display', 'flex');
     $('.related').css('display', 'block');
     $('.gifContainer').remove();
+    // A loop for setting the gifs into seperate Divs.
+    // I created unique identifiers at first thinking I'd
+    // have to access them indiviually. Not thinking at
+    // all about $this. Not needed but it was a learning
+    // experience.
     response1[0].data.forEach(function(mov, idx) {
       $('#movies').append('<div class="image' + (idx + 1) + '" />');
       $('.image' + (idx + 1) + '').addClass('gifContainer');
@@ -104,8 +111,6 @@ $(document).on('click', '.tenMore', function() {
     '&api_key=uQw4p1YS9v3frf9OYHMePByxlpwxKCfw&limit=' +
     limit;
 
-  console.log(queryURL);
-
   $.ajax({
     url: queryURL,
     method: 'GET'
@@ -142,7 +147,7 @@ $(document).on('click', 'img', function() {
 });
 
 // Click event for adding more movies to the button list.
-// Wont accept duplicates or blank entries.
+// Won't accept duplicates or blank entries.
 $('#addMovie').on('click', function(e) {
   e.preventDefault();
   let input = true;
@@ -166,7 +171,7 @@ $('#addMovie').on('click', function(e) {
   }
 });
 
-// Click event for accessing your favorites. After Andy
+// Click event for accessing the favorites. After Andy
 // said we needed to start our next homework early today.
 // I decided I didn't want to spend time loading this
 // into local storage and just start my next homework.
@@ -177,7 +182,7 @@ $(document).on('click', '#favorites', function(e) {
   $('#favoritesDiv').css('display', 'grid');
 });
 
-// Click event that adds a Gif to your favorites
+// Click event that adds a Gif to a favorites div
 $('#movies').on('click', '.fav', function() {
   console.log(this);
   $('#favoritesDiv').append(
