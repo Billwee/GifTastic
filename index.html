@@ -23,7 +23,13 @@
         id="movie-input"
         placeholder="Enter Movie Here.."
       /><br />
-      <input id="addMovie" type="submit" value="Add A Movie" />
+      <input class="formBTN" id="addMovie" type="submit" value="Add A Movie" />
+      <input
+        class="formBTN"
+        id="favorites"
+        type="submit"
+        value="See Your Favorites"
+      />
     </form>
 
     <!-- Content -->
@@ -40,8 +46,10 @@
         </div>
       </div>
       <div class="related">Related Gifs</div>
-      <div id="movies"></div>
+      <div id="movies" class="grid"></div>
     </div>
+
+    <div class="favoritesDiv grid"></div>
 
     <!-- Ten More -->
     <div class="tenMoreDiv">

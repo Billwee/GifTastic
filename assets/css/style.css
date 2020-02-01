@@ -48,7 +48,7 @@ button {
   margin-bottom: 5px;
 }
 
-#addMovie {
+.formBTN {
   text-align: center;
   font-family: 'Roboto', sans-serif;
   background-color: cadetblue;
@@ -56,6 +56,11 @@ button {
   border: 3px solid transparent;
   border-radius: 5px;
   padding: 5px;
+  border: 3px solid transparent;
+}
+
+.formBTN:hover {
+  border: 3px solid tomato;
 }
 
 button:hover {
@@ -82,7 +87,8 @@ button:hover {
   padding-left: 20px;
 }
 
-#movies {
+.grid {
+  text-align: center;
   display: grid;
   justify-content: space-evenly;
   align-items: center;

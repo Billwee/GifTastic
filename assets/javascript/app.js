@@ -37,7 +37,8 @@ function generateButtons() {
 
 generateButtons();
 
-$(document).on('click', '.movBTN', function() {
+$(document).on('click', '.movBTN', function(e) {
+  e.preventDefault();
   limit = 10;
   currentMovie = $(this).text();
 
@@ -55,6 +56,8 @@ $(document).on('click', '.movBTN', function() {
     response2
   ) {
     console.log(response1);
+    $('.favorites').css('display', 'none');
+    $('.movieDiv').css('display', 'block');
     $('.tenMoreDiv').css('display', 'flex');
     $('.related').css('display', 'block');
     $('.gifContainer').remove();
@@ -67,9 +70,13 @@ $(document).on('click', '.movBTN', function() {
         'data-animate': mov.images.original.url,
         'data-state': 'still'
       });
+      var favorite = $('<button>')
+        .text('Favorite')
+        .addClass('fav');
       var rating = $('<p>Rating: ' + mov.rating.toUpperCase() + '</p>');
       $('.image' + (idx + 1) + '').append(gifIMG);
       $('.image' + (idx + 1) + '').append(rating);
+      $('.image' + (idx + 1) + '').append(favorite);
     });
     console.log(response2);
     $('.movieInfo').css('display', 'flex');
@@ -149,4 +156,20 @@ $('#addMovie').on('click', function(e) {
     $('#movie-input').val('');
     generateButtons();
   }
+});
+
+$(document).on('click', '#favorites', function(e) {
+  e.preventDefault();
+  $('.movieDiv').css('display', 'none');
+  $('.tenMoreDiv').css('display', 'none');
+  $('.favorites').css('display', 'grid');
+});
+
+$('#movies').on('click', '.fav', function() {
+  console.log(this);
+  $('.favoritesDiv').append(
+    $(this)
+      .siblings('img')
+      .clone(true)
+  );
 });
