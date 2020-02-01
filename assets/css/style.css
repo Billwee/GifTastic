@@ -29,6 +29,35 @@ button {
   margin: 10px 5px 0 5px;
 }
 
+.related {
+  display: none;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  background-color: cadetblue;
+  color: #000;
+  border: 3px solid transparent;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 0px 40px 30px 40px;
+}
+
+#movie-input {
+  border-radius: 4px;
+  padding: 8px 20px;
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+#addMovie {
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  background-color: cadetblue;
+  color: #000;
+  border: 3px solid transparent;
+  border-radius: 5px;
+  padding: 5px;
+}
+
 button:hover {
   border: 3px solid tomato;
 }
@@ -38,13 +67,29 @@ button:hover {
   margin-bottom: 20px;
 }
 
+.movieInfo {
+  margin: auto;
+  width: 600px;
+  display: none;
+  margin-bottom: 40px;
+}
+
+.movieText {
+  display: flex;
+  flex-direction: column;
+  margin: 40px 0 40px 0;
+  justify-content: space-around;
+  padding-left: 20px;
+}
+
 #movies {
   display: grid;
   justify-content: space-evenly;
   align-items: center;
   justify-items: center;
-  grid-template-columns: auto auto auto;
-  row-gap: 20px;
+  grid-template-columns: 400px 400px 400px;
+  row-gap: 50px;
+  column-gap: 20px;
 }
 
 img {
@@ -52,12 +97,75 @@ img {
 }
 
 .tenMoreDiv {
-  display: flex;
+  display: none;
+  clear: both;
   justify-content: center;
   margin-bottom: 150px;
+  margin-top: 30px;
 }
 
 .tenMore {
   padding: 5px 30px 5px 30px;
   font-size: 20px;
+}
+
+@media screen and (max-width: 1400px) {
+  #movies {
+    grid-template-columns: 400px 400px;
+  }
+  img {
+    max-width: 400px;
+  }
+}
+@media screen and (max-width: 980px) {
+  #movies {
+    grid-template-columns: 350px 350px;
+  }
+  img {
+    max-width: 350px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #movies {
+    grid-template-columns: 250px 250px;
+    justify-content: space-around;
+    /* row-gap: 0px;
+    column-gap: 20px; */
+  }
+  #movieButtons {
+    text-align: center;
+  }
+  img {
+    max-width: 250px;
+  }
+
+  .movieInfo {
+    width: 450px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .img {
+    text-align: center;
+  }
+  .movieInfo {
+    width: 300px;
+    flex-direction: column;
+    text-align: center;
+    align-content: center;
+  }
+  .movieInfo p {
+    margin-bottom: 8px;
+  }
+
+  #movies {
+    /* width: 300px; */
+    grid-template-columns: 300px;
+    justify-content: space-around;
+  }
+
+  img {
+    max-width: 300px;
+  }
 }

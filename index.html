@@ -12,18 +12,38 @@
     <title>GifTastic Gif Generator</title>
   </head>
   <body>
+    <!-- Header -->
     <div class="header">GifTastic Gif Generator</div>
     <div id="movieButtons"></div>
 
+    <!-- Form -->
     <form action="" id="movie-form">
-      <label for="movie-input">Add a Movie</label>
-      <input type="text" id="movie-input" /><br />
-
-      <input id="addMovie" type="submit" value="Submit" />
+      <input
+        type="text"
+        id="movie-input"
+        placeholder="Enter Movie Here.."
+      /><br />
+      <input id="addMovie" type="submit" value="Add A Movie" />
     </form>
 
-    <div id="movies"></div>
+    <!-- Content -->
+    <div class="movieDiv">
+      <div class="movieInfo">
+        <div class="img">
+          <img class="infoImg" src="" alt="" />
+        </div>
+        <div class="movieText">
+          <p class="title"></p>
+          <p class="rating"></p>
+          <p class="release"></p>
+          <p class="plot"></p>
+        </div>
+      </div>
+      <div class="related">Related Gifs</div>
+      <div id="movies"></div>
+    </div>
 
+    <!-- Ten More -->
     <div class="tenMoreDiv">
       <button class="tenMore">Add 10 More...</button>
     </div>
