@@ -63,3 +63,15 @@ $('button').click(function() {
     });
   });
 });
+
+$('#movies').on('click', 'img', function() {
+  var state = $(this).attr('data-state');
+  console.log(this);
+  if (state === 'animate') {
+    $(this).attr('src', $(this).attr('data-still'));
+    $(this).attr('data-state', 'still');
+  } else {
+    $(this).attr('src', $(this).attr('data-animate'));
+    $(this).attr('data-state', 'animate');
+  }
+});
