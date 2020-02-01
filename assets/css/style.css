@@ -3,3 +3,61 @@
   padding: 0;
   box-sizing: border-box;
 }
+body {
+  background-color: #000;
+  font-family: 'Roboto', sans-serif;
+  color: #fff;
+  margin: 20px;
+}
+
+.header {
+  text-align: center;
+  font-size: 35px;
+}
+
+#movieButtons {
+  margin: 0 40px 20px 40px;
+}
+
+button {
+  font-family: 'Roboto', sans-serif;
+  background-color: cadetblue;
+  color: #000;
+  border: 3px solid transparent;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 10px 5px 0 5px;
+}
+
+button:hover {
+  border: 3px solid tomato;
+}
+
+#movie-form {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#movies {
+  display: grid;
+  justify-content: space-evenly;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: auto auto auto;
+  row-gap: 20px;
+}
+
+img {
+  max-width: 400px;
+}
+
+.tenMoreDiv {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 150px;
+}
+
+.tenMore {
+  padding: 5px 30px 5px 30px;
+  font-size: 20px;
+}
