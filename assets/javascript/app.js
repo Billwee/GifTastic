@@ -56,7 +56,7 @@ $(document).on('click', '.movBTN', function(e) {
     response2
   ) {
     console.log(response1);
-    $('.favorites').css('display', 'none');
+    $('#favoritesDiv').css('display', 'none');
     $('.movieDiv').css('display', 'block');
     $('.tenMoreDiv').css('display', 'flex');
     $('.related').css('display', 'block');
@@ -162,12 +162,12 @@ $(document).on('click', '#favorites', function(e) {
   e.preventDefault();
   $('.movieDiv').css('display', 'none');
   $('.tenMoreDiv').css('display', 'none');
-  $('.favorites').css('display', 'grid');
+  $('#favoritesDiv').css('display', 'grid');
 });
 
 $('#movies').on('click', '.fav', function() {
   console.log(this);
-  $('.favoritesDiv').append(
+  $('#favoritesDiv').append(
     $(this)
       .siblings('img')
       .clone(true)

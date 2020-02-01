@@ -41,6 +41,10 @@ button {
   margin: 0px 40px 30px 40px;
 }
 
+#favoritesDiv {
+  display: none;
+}
+
 #movie-input {
   border-radius: 4px;
   padding: 8px 20px;
@@ -116,7 +120,7 @@ img {
 }
 
 @media screen and (max-width: 1400px) {
-  #movies {
+  .grid {
     grid-template-columns: 400px 400px;
   }
   img {
@@ -124,7 +128,7 @@ img {
   }
 }
 @media screen and (max-width: 980px) {
-  #movies {
+  .grid {
     grid-template-columns: 350px 350px;
   }
   img {
@@ -133,7 +137,7 @@ img {
 }
 
 @media screen and (max-width: 768px) {
-  #movies {
+  .grid {
     grid-template-columns: 250px 250px;
     justify-content: space-around;
     /* row-gap: 0px;
@@ -165,7 +169,7 @@ img {
     margin-bottom: 8px;
   }
 
-  #movies {
+  .grid {
     /* width: 300px; */
     grid-template-columns: 300px;
     justify-content: space-around;
