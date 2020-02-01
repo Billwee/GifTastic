@@ -52,14 +52,14 @@ $(document).on('click', 'button', function() {
       $('#movies').append('<div class="image' + (idx + 1) + '" />');
       $('.image' + (idx + 1) + '').addClass('gifContainer');
       var gifIMG = $('<img>').attr({
-        src: mov.images.original.url,
+        src: mov.images.original_still.url,
         'data-still': mov.images.original_still.url,
         'data-animate': mov.images.original.url,
-        'data-state': 'animate'
+        'data-state': 'still'
       });
       var rating = $('<p>Rating: ' + mov.rating.toUpperCase() + '</p>');
-      $('.image' + (idx + 1) + '').append(rating);
       $('.image' + (idx + 1) + '').append(gifIMG);
+      $('.image' + (idx + 1) + '').append(rating);
     });
   });
 });
