@@ -12,7 +12,7 @@ var topics = [
   'spirited away',
   'the lion king',
   'back to the future',
-  ' avengers endgame',
+  'avengers endgame',
   'wall-e',
   'braveheart',
   'die hard',
@@ -25,6 +25,8 @@ var topics = [
 var limit = 10;
 var currentMovie;
 
+// Funtion for generating the buttons giving them all
+// the same class for calling them later
 function generateButtons() {
   topics.forEach(function(movie) {
     var button = $('<button>');
@@ -35,8 +37,11 @@ function generateButtons() {
   });
 }
 
+//Generating the buttons on page load.
 generateButtons();
 
+//Click event on the buttons for accessing info in
+// the APIs.
 $(document).on('click', '.movBTN', function(e) {
   e.preventDefault();
   limit = 10;
@@ -44,7 +49,7 @@ $(document).on('click', '.movBTN', function(e) {
 
   var queryURL =
     '//api.giphy.com/v1/gifs/search?q=' +
-    $(this).text() +
+    currentMovie +
     '&api_key=uQw4p1YS9v3frf9OYHMePByxlpwxKCfw&limit=' +
     limit;
 
@@ -88,7 +93,9 @@ $(document).on('click', '.movBTN', function(e) {
   });
 });
 
-//Ten More
+// Click event for adding 10 more gifs. Basically it
+// reloads the grid but with 10 extra gifs each time.
+// Once a new movie is picked it resets back to 10.
 $(document).on('click', '.tenMore', function() {
   limit += 10;
   var queryURL =
@@ -121,7 +128,7 @@ $(document).on('click', '.tenMore', function() {
   });
 });
 
-//Pausing Gifs
+// Click event for pausing the Gifs
 $(document).on('click', 'img', function() {
   var state = $(this).attr('data-state');
   console.log(this);
@@ -134,7 +141,8 @@ $(document).on('click', 'img', function() {
   }
 });
 
-//Adding movie to list
+// Click event for adding more movies to the button list.
+// Wont accept duplicates or blank entries.
 $('#addMovie').on('click', function(e) {
   e.preventDefault();
   let input = true;
@@ -158,6 +166,10 @@ $('#addMovie').on('click', function(e) {
   }
 });
 
+// Click event for accessing your favorites. After Andy
+// said we needed to start our next homework early today.
+// I decided I didn't want to spend time loading this
+// into local storage and just start my next homework.
 $(document).on('click', '#favorites', function(e) {
   e.preventDefault();
   $('.movieDiv').css('display', 'none');
@@ -165,6 +177,7 @@ $(document).on('click', '#favorites', function(e) {
   $('#favoritesDiv').css('display', 'grid');
 });
 
+// Click event that adds a Gif to your favorites
 $('#movies').on('click', '.fav', function() {
   console.log(this);
   $('#favoritesDiv').append(

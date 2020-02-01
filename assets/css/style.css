@@ -92,7 +92,6 @@ button:hover {
 }
 
 .grid {
-  text-align: center;
   display: grid;
   justify-content: space-evenly;
   align-items: center;
