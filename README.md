@@ -17,7 +17,7 @@ The page is completely responsive so it can be enjoyed from even the smallest sc
 
 ## Deployment
 
-You can view the application by [clicking here]()
+You can view the application by [clicking here](https://billwee.github.io/GifTastic/)
 
 ## Technology Used
 
